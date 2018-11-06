@@ -82,13 +82,13 @@ for ($i = 0; $i -le 15; $i++) {
             [void]$sb.Clear()
             $cmd = [string]::Format("hf mf hardnested {0} {1} {2} {3} {4}", $block, $type, $key, $i*4, $kt)
             $cmd
-	        [void]$sb.AppendLine($cmd)
+            [void]$sb.AppendLine($cmd)
             [void]$sb.AppendLine("exit")
             $result = $sb.ToString() | .\proxmark3.exe $com -f | Select-String found | foreach{$_.ToString().Substring(61, 12)}
             "Key found : " + $result
             $result+";" | Add-Content $uid".dic"
             Check-Key
-	    }
+        }
     }
 }
 
