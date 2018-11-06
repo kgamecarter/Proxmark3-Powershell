@@ -7,9 +7,9 @@ param (
     [Parameter(Position = 0)]
     [string[]]$keys,
     [string]$com = "com3"
- )
+)
 
- function proxmark3 {
+function proxmark3 {
     param([Parameter(ValueFromPipeline)]$input) 
     $input | .\proxmark3.exe $com -f | select -Skip 15
 }
