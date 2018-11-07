@@ -52,6 +52,7 @@ function Check-Key() {
             Key = $_.Matches[0].Groups[4].Value;
             Found = $_.Matches[0].Groups[5].Value -like "1";
         }
+        $_.ToString()
     }
 }
 
